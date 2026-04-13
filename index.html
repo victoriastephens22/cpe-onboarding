@@ -19,74 +19,97 @@ h1,h2,h3,h4,h5,h6,button,input,select,textarea{font-family:'Chivo',ui-sans-serif
 header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2);}
 .logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:500;color:white;text-decoration:none;}
 .header-badge{background:rgba(255,255,255,.15);color:white;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;letter-spacing:.4px;}
-.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:white;padding:48px 32px 40px;}
-.hero h1{font-size:26px;font-weight:500;margin-bottom:8px;}
-.hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:600px;margin-bottom:24px;}
-.hero-stats{display:flex;gap:32px;flex-wrap:wrap;}
-.hero-stat{display:flex;flex-direction:column;gap:2px;}
-.hero-stat-val{font-size:22px;font-weight:500;}
-.hero-stat-lbl{font-size:12px;color:rgba(255,255,255,.65);}
-.progress-wrap{margin-top:24px;}
-.progress-label{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:6px;}
-.progress-bar-outer{background:rgba(255,255,255,.2);border-radius:20px;height:8px;width:100%;max-width:400px;}
-.progress-bar-inner{background:white;border-radius:20px;height:8px;transition:width .4s ease;width:0%;}
-.week-tabs{background:white;border-bottom:1px solid var(--neutral-200);padding:0 32px;display:flex;gap:0;position:sticky;top:56px;z-index:90;}
-.week-tab{padding:14px 20px;font-size:13px;font-weight:500;color:var(--neutral-500);border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;}
-.week-tab:hover{color:var(--neutral-800);}
-.week-tab.active{color:var(--primary);border-bottom-color:var(--primary);}
+.week-tabs{background:white;border-bottom:1px solid var(--neutral-200);padding:0 32px;display:flex;gap:0;position:sticky;top:56px;z-index:90;box-shadow:0 2px 6px rgba(0,0,0,.06);}
+.week-tab{padding:16px 22px;font-size:13px;font-weight:700;color:var(--neutral-500);border-bottom:3px solid transparent;margin-bottom:-1px;cursor:pointer;transition:all .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;letter-spacing:.1px;}
+.week-tab:hover{color:var(--primary-dark);background:var(--neutral-50);}
+.week-tab.active{color:var(--primary-dark);border-bottom-color:var(--primary);}
 .main{max-width:980px;margin:0 auto;padding:32px 24px 80px;}
 .week-panel{display:none;}
 .week-panel.active{display:block;}
-.week-header{margin-bottom:28px;}
-.week-header h2{font-size:20px;font-weight:500;color:var(--neutral-900);margin-bottom:4px;}
-.week-header p{color:var(--neutral-600);font-size:13px;}
+.week-header{margin-bottom:32px;padding:24px 28px;background:white;border-radius:8px;border:1px solid var(--neutral-200);box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.week-header h2{font-size:22px;font-weight:700;color:var(--neutral-900);margin-bottom:6px;}
+.week-header p{color:var(--neutral-600);font-size:13px;max-width:640px;line-height:1.5;}
 .week-progress{display:flex;align-items:center;gap:12px;margin-top:12px;}
 .week-progress-bar{flex:1;max-width:200px;height:4px;background:var(--neutral-200);border-radius:4px;}
 .week-progress-fill{height:4px;background:var(--primary);border-radius:4px;transition:width .3s;}
 .week-progress-text{font-size:11px;color:var(--neutral-500);}
-.day-section{margin-bottom:20px;border:1px solid var(--neutral-200);border-radius:4px;background:white;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);}
-.day-header{display:flex;align-items:center;gap:12px;padding:14px 20px;cursor:pointer;user-select:none;border-bottom:1px solid var(--neutral-200);}
+.day-section{margin-bottom:12px;border:1px solid var(--neutral-200);border-radius:10px;background:white;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:box-shadow .2s;}
+.day-section:hover{box-shadow:0 4px 16px rgba(18,116,196,.1);}
+.day-header{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;}
+.day-header.open{border-bottom:1px solid var(--neutral-100);}
 .day-header:hover{background:var(--neutral-50);}
-.day-num{width:36px;height:36px;border-radius:50%;background:var(--primary-light);color:var(--primary-dark);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.day-num{width:40px;height:40px;border-radius:10px;background:var(--primary-dark);color:white;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.day-num.done{background:var(--success);}
 .day-info{flex:1;}
-.day-title{font-size:14px;font-weight:500;color:var(--neutral-900);}
-.day-subtitle{font-size:11px;color:var(--neutral-500);margin-top:1px;}
-.day-chevron{color:var(--neutral-500);transition:transform .2s;font-size:16px;margin-left:auto;}
-.day-header.open .day-chevron{transform:rotate(90deg);}
-.day-body{padding:16px 20px;display:flex;flex-direction:column;gap:10px;}
+.day-title{font-size:14px;font-weight:700;color:var(--neutral-900);}
+.day-subtitle{font-size:11px;color:var(--neutral-500);margin-top:2px;font-weight:400;}
+.day-meta{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.day-type-pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.3px;}
+.pill-read{background:#DBEAFE;color:#1e40af;}
+.pill-quiz{background:#fce7f3;color:#9d174d;}
+.pill-roleplay{background:#ede9fe;color:#5b21b6;}
+.pill-practice{background:#d1fae5;color:#065f46;}
+.pill-session{background:#fed7aa;color:#9a3412;}
+.pill-shadow{background:#e0e7ff;color:#3730a3;}
+.day-chevron{color:var(--neutral-400,#9ca3af);transition:transform .25s;font-size:18px;margin-left:auto;flex-shrink:0;}
+.day-header.open .day-chevron{transform:rotate(90deg);color:var(--primary);}
+.day-body{padding:0 16px 16px;display:flex;flex-direction:column;gap:8px;margin-top:8px;}
 .day-body.hidden{display:none;}
 /* Activity cards */
-.activity{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:4px;border:1px solid var(--neutral-200);position:relative;}
-.activity-icon{width:32px;height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.activity{display:flex;gap:0;align-items:stretch;border-radius:8px;border:1px solid var(--neutral-200);background:white;overflow:hidden;transition:box-shadow .15s;}
+.activity:hover{box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.activity-stripe{width:4px;flex-shrink:0;}
+.activity-inner{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;flex:1;}
+.activity-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
 .activity-content{flex:1;min-width:0;}
-.activity-title{font-size:13px;font-weight:500;color:var(--neutral-900);margin-bottom:2px;}
-.activity-desc{font-size:12px;color:var(--neutral-600);line-height:1.4;margin-bottom:6px;}
-.activity-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
-.alink{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;text-decoration:none;border:1px solid;transition:opacity .15s;}
-.alink:hover{opacity:.75;}
-.alink-guide{background:#EFF6FF;color:var(--primary);border-color:var(--primary-light);}
+.activity-header{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.activity-type-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:2px 7px;border-radius:20px;}
+.activity-title{font-size:13px;font-weight:700;color:var(--neutral-900);}
+.activity-desc{font-size:12px;color:var(--neutral-600);line-height:1.5;margin-bottom:8px;}
+.activity-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.alink{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:5px 11px;border-radius:6px;text-decoration:none;border:1px solid;transition:all .15s;}
+.alink:hover{opacity:.8;transform:translateY(-1px);}
+.alink-guide{background:#EFF6FF;color:#1e40af;border-color:#bfdbfe;}
 .alink-section{background:var(--success-light);color:var(--success);border-color:#a7f3d0;}
 .alink-video{background:var(--purple-light);color:var(--purple);border-color:#d8b4fe;}
-.type-guide{background:#EFF6FF;}
-.type-video{background:var(--purple-light);}
-.type-session{background:var(--warning-light);}
-.type-shadowing{background:var(--purple-light);}
-.type-practice{background:var(--yellow-light);}
-.type-meeting{background:var(--neutral-50);}
-.type-check{background:var(--red-light);}
-.type-roleplay{background:#fdf4ff;}
-.activity-time{font-size:11px;color:var(--neutral-500);white-space:nowrap;flex-shrink:0;margin-left:8px;}
+/* Activity type theming via stripe + icon bg */
+.type-guide .activity-stripe{background:#3b82f6;}
+.type-guide .activity-icon{background:#DBEAFE;color:#1e40af;}
+.type-guide .activity-type-label{background:#DBEAFE;color:#1e40af;}
+.type-video .activity-stripe{background:var(--purple);}
+.type-video .activity-icon{background:#ede9fe;color:var(--purple);}
+.type-video .activity-type-label{background:#ede9fe;color:var(--purple);}
+.type-session .activity-stripe{background:#f97316;}
+.type-session .activity-icon{background:#fed7aa;color:#9a3412;}
+.type-session .activity-type-label{background:#fed7aa;color:#9a3412;}
+.type-shadowing .activity-stripe{background:#6366f1;}
+.type-shadowing .activity-icon{background:#e0e7ff;color:#3730a3;}
+.type-shadowing .activity-type-label{background:#e0e7ff;color:#3730a3;}
+.type-practice .activity-stripe{background:#10b981;}
+.type-practice .activity-icon{background:#d1fae5;color:#065f46;}
+.type-practice .activity-type-label{background:#d1fae5;color:#065f46;}
+.type-meeting .activity-stripe{background:var(--neutral-400,#9ca3af);}
+.type-meeting .activity-icon{background:var(--neutral-100);color:var(--neutral-600);}
+.type-meeting .activity-type-label{background:var(--neutral-100);color:var(--neutral-600);}
+.type-check .activity-stripe{background:#e11d48;}
+.type-check .activity-icon{background:#fce7f3;color:#9d174d;}
+.type-check .activity-type-label{background:#fce7f3;color:#9d174d;}
+.type-roleplay .activity-stripe{background:var(--purple);}
+.type-roleplay .activity-icon{background:#ede9fe;color:var(--purple);}
+.type-roleplay .activity-type-label{background:#ede9fe;color:var(--purple);}
+.activity-time{font-size:11px;color:var(--neutral-400,#9ca3af);white-space:nowrap;flex-shrink:0;margin-left:8px;margin-top:2px;}
 /* Badge */
-.badge{display:inline-flex;align-items:center;font-size:10px;font-weight:500;padding:2px 7px;border-radius:10px;margin-right:4px;}
+.badge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px;letter-spacing:.3px;text-transform:uppercase;}
 .badge-guide{background:#DBEAFE;color:#1e40af;}
 .badge-video{background:#ede9fe;color:#5b21b6;}
 .badge-session{background:#fed7aa;color:#9a3412;}
-.badge-check{background:#fecdd3;color:#9f1239;}
-.badge-roleplay{background:#fae8ff;color:#6b21a8;}
+.badge-check{background:#fce7f3;color:#9d174d;}
+.badge-roleplay{background:#ede9fe;color:var(--purple);}
 /* Complete button */
-.complete-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;border:1px solid var(--neutral-200);background:white;color:var(--neutral-600);cursor:pointer;transition:all .15s;margin-top:8px;}
-.complete-btn:hover{border-color:var(--success);color:var(--success);}
-.complete-btn.done{background:var(--success-light);border-color:var(--success);color:var(--success);}
+.complete-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:8px 18px;border-radius:8px;border:2px solid var(--neutral-200);background:white;color:var(--neutral-600);cursor:pointer;transition:all .2s;margin-top:10px;letter-spacing:.2px;}
+.complete-btn:hover{border-color:var(--success);color:var(--success);background:#f0fdf4;transform:translateY(-1px);box-shadow:0 2px 8px rgba(4,120,87,.15);}
+.complete-btn.done{background:var(--success);border-color:var(--success);color:white;box-shadow:0 2px 8px rgba(4,120,87,.25);}
+.complete-btn.done:hover{background:#065f46;transform:none;}
 /* Video embed placeholder */
 .video-placeholder{background:#1e1b4b;border-radius:4px;padding:32px 20px;text-align:center;color:white;margin-top:8px;cursor:pointer;position:relative;overflow:hidden;}
 .video-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(18,116,196,.4),rgba(86,0,157,.3));}
@@ -149,10 +172,24 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
 .upload-drive-link:hover{opacity:.85;}
 .upload-note{font-size:11px;color:#92400e;margin-top:10px;padding:8px 12px;background:#fef3c7;border-radius:4px;}
 /* Welcome banner */
-.welcome-banner{background:#fff;border-bottom:3px solid var(--primary);padding:28px 32px;display:flex;align-items:center;gap:20px;}
+
+.welcome-banner{background:#fff;border-bottom:1px solid var(--neutral-200);padding:24px 32px;display:flex;align-items:center;gap:16px;}
 .welcome-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
 .welcome-text h2{font-size:17px;font-weight:700;color:var(--neutral-900);margin-bottom:3px;}
 .welcome-text p{font-size:13px;color:var(--neutral-600);max-width:680px;}
+/* Overview strip */
+.overview-strip{background:#fff;border-bottom:3px solid var(--primary);padding:0 32px;}
+.overview-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;max-width:980px;margin:0 auto;padding:18px 0;}
+.overview-stats{display:flex;align-items:center;gap:0;}
+.overview-stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:0 28px;}
+.overview-stat:first-child{padding-left:0;}
+.overview-stat-val{font-size:24px;font-weight:700;color:var(--primary-dark);}
+.overview-stat-lbl{font-size:10px;font-weight:700;color:var(--neutral-500);text-transform:uppercase;letter-spacing:.6px;white-space:nowrap;}
+.overview-divider{width:1px;height:36px;background:var(--neutral-200);flex-shrink:0;}
+.overview-progress{display:flex;flex-direction:column;gap:6px;align-items:flex-end;min-width:280px;}
+.overview-progress-label{font-size:12px;font-weight:500;color:var(--neutral-600);}
+.overview-bar-outer{background:var(--neutral-200);border-radius:20px;height:12px;width:280px;}
+.overview-bar-inner{background:var(--primary);border-radius:20px;height:12px;transition:width .4s ease;width:0%;}
 /* Strategy section */
 .strategy-section{background:var(--primary-dark);color:white;padding:0;}
 .strategy-inner{max-width:980px;margin:0 auto;padding:36px 32px;}
@@ -204,20 +241,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
   <span class="header-badge">Client &amp; Payment Experience</span>
 </header>
 
-<div class="hero">
-  <h1>CPE Onboarding Program</h1>
-  <p>Your structured 4-week path to becoming a confident CPE agent. Every article, knowledge check, and role play is grounded in Pillar 1 — <strong>building a CX engine</strong> — so you learn not just what to do, but why it matters to our payers.</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><span class="hero-stat-val">4</span><span class="hero-stat-lbl">Weeks</span></div>
-    <div class="hero-stat"><span class="hero-stat-val">19</span><span class="hero-stat-lbl">Days</span></div>
-    <div class="hero-stat"><span class="hero-stat-val">~32 hrs</span><span class="hero-stat-lbl">Learning Content</span></div>
-    <div class="hero-stat"><span class="hero-stat-val" id="kc-total">24</span><span class="hero-stat-lbl">Knowledge Checks</span></div>
-  </div>
-  <div class="progress-wrap">
-    <div class="progress-label">Overall Progress — <span id="global-pct">0</span>% complete</div>
-    <div class="progress-bar-outer"><div class="progress-bar-inner" id="global-bar"></div></div>
-  </div>
-</div>
+
 
 <div class="week-tabs">
   <button class="week-tab active" onclick="showWeek(1)">Week 1 — Foundations</button>
@@ -229,8 +253,39 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
 <div class="welcome-banner">
   <div class="welcome-avatar">👋</div>
   <div class="welcome-text">
-    <h2>Welcome to CPE Onboarding, Victoria! You're going to love it here.</h2>
+    <h2>Welcome to CPE Onboarding! You're going to love it here.</h2>
     <p>This 4-week program is your launchpad into Flywire's Client &amp; Payment Experience team. You'll build real expertise in payer support, learn the tools your team uses every day, and practice with hands-on knowledge checks and role plays. Take it one day at a time — your trainer is with you every step of the way. 🚀</p>
+  </div>
+</div>
+
+<!-- Program Overview Strip -->
+<div class="overview-strip">
+  <div class="overview-inner">
+    <div class="overview-stats">
+      <div class="overview-stat">
+        <span class="overview-stat-val">4</span>
+        <span class="overview-stat-lbl">Weeks</span>
+      </div>
+      <div class="overview-divider"></div>
+      <div class="overview-stat">
+        <span class="overview-stat-val">19</span>
+        <span class="overview-stat-lbl">Days</span>
+      </div>
+      <div class="overview-divider"></div>
+      <div class="overview-stat">
+        <span class="overview-stat-val">~32 hrs</span>
+        <span class="overview-stat-lbl">Learning Content</span>
+      </div>
+      <div class="overview-divider"></div>
+      <div class="overview-stat">
+        <span class="overview-stat-val" id="kc-total">24</span>
+        <span class="overview-stat-lbl">Knowledge Checks</span>
+      </div>
+    </div>
+    <div class="overview-progress">
+      <div class="overview-progress-label">Overall Progress — <span id="global-pct">0</span>% complete</div>
+      <div class="overview-bar-outer"><div class="overview-bar-inner" id="global-bar"></div></div>
+    </div>
   </div>
 </div>
 
@@ -294,16 +349,23 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body">
       <div class="activity type-session">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👥</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Live Session</span></div>
           <div class="activity-title">Team Introductions &amp; CPE Overview</div>
           <div class="activity-desc">Live session with your trainer. Meet the CPE team, understand the org structure, and learn how PE and CE work together to support payers.</div>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">📖</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Introduction to Payer Experience</div>
           <div class="activity-desc">Read the foundational articles that explain how Flywire's Payer Experience works, what payment requests are, and the core workflow.</div>
           <div class="activity-links">
@@ -315,11 +377,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d1-guide1" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <!-- KC 1 -->
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — PE Basics</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -334,6 +400,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. The Flywire Payment ID uniquely tracks a payment through the system — from creation through to settlement. Review the article above.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -351,8 +418,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">📖</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">CSR Dashboard — Core Reading</div>
           <div class="activity-desc">Understand the dashboard layout, how to search for payments, and how to interpret payment information shown to agents.</div>
           <div class="activity-links">
@@ -365,10 +435,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d2-guide1" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-video">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎬</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Video</span></div>
           <div class="activity-title">Sandbox Practice — Dashboard Navigation</div>
           <div class="activity-desc">In your sandbox: search for a payment by payer name, navigate the payment tabs, and use the impersonation feature. Then record and upload your practice evidence below.</div>
           <div class="upload-box">
@@ -385,11 +459,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d2-sandbox" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <!-- KC 2 -->
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — CSR Dashboard</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -405,11 +483,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
         </div>
+        </div>
       </div>
       <!-- Role Play 1 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — First Payer Contact</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -423,6 +505,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback best"><span class="rp-feedback-icon">✅</span> Best response! You reassure the payer, take action immediately, and use a secondary identifier (email) to locate the payment in the Dashboard. Professional and efficient.</div>
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> This response would frustrate the payer. You have the tools to search by name or email — always try to help before asking for more information.</div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -440,8 +523,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">📖</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Managing Payments — Core Articles</div>
           <div class="activity-desc">Learn how payers manage their payments, what tracking links are, and the key payment statuses you'll see on the Dashboard.</div>
           <div class="activity-links">
@@ -454,18 +540,26 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d3-guide1" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">50 min</span>
+        </div>
       </div>
       <div class="activity type-session">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👥</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Live Session</span></div>
           <div class="activity-title">Trainer Session — Payment Lifecycle Walkthrough</div>
           <div class="activity-desc">Your trainer will walk through a full payment lifecycle: creation → processing → received → settled. Follow along in your sandbox.</div>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Payment Management</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -480,6 +574,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. Review "Adding a Payment to User Account" — this specific feature lets payers link existing payments to their account.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -497,8 +592,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">📖</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Zendesk Support — Tickets &amp; Workflows</div>
           <div class="activity-desc">Learn how to use Zendesk for ticket management, the key ticket fields and statuses, and how side conversations and omni-channel work.</div>
           <div class="activity-links">
@@ -511,10 +609,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d4-zd" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">💬</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Zendesk Chat Setup</div>
           <div class="activity-desc">Configure your chat workspace and understand how to handle live chats with payers.</div>
           <div class="activity-links">
@@ -526,11 +628,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d4-chat" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">30 min</span>
+        </div>
       </div>
       <!-- Role Play 2 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — Live Chat Handling</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -544,6 +650,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback best"><span class="rp-feedback-icon">✅</span> Excellent! You acknowledge the urgency, take immediate action, and gather the information needed to help. This is the right approach for time-sensitive situations.</div>
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> This response doesn't address the urgency. Always look up the payment first — the status may reveal useful info, and the payer needs reassurance, not just a generic answer.</div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -561,8 +668,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">⚙️</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Flywire Admin — Overview</div>
           <div class="activity-desc">Get familiar with the Admin panel — what it's used for, how to navigate the Clients tab, and key admin functions agents need to know.</div>
           <div class="activity-links">
@@ -574,18 +684,26 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d5-admin" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">30 min</span>
+        </div>
       </div>
       <div class="activity type-session">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👥</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Live Session</span></div>
           <div class="activity-title">Week 1 Review &amp; Q&amp;A</div>
           <div class="activity-desc">Debrief with your trainer. Ask questions on anything from the week: PE flow, Dashboard, Zendesk, and Admin. Share your biggest takeaways.</div>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Admin &amp; Tools</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -600,6 +718,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. The Clients Tab is the right place to look up client institution information. Review "Admin: Clients Tab" above.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -630,8 +749,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🏦</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Offline Payment Methods</div>
           <div class="activity-desc">Learn all offline payment methods supported by Flywire: domestic and international bank transfers, and key differences in the process.</div>
           <div class="activity-links">
@@ -643,10 +765,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d6-offline" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Offline Payments</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -661,6 +787,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. When payer and bank are in the same country, look for domestic bank transfer options first. Review the offline payment methods articles above.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -678,8 +805,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">💳</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Online Payment Methods</div>
           <div class="activity-desc">Explore all online payment options: credit/debit cards, online bank transfers, Apple Pay, and other digital methods.</div>
           <div class="activity-links">
@@ -692,11 +822,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d7-online" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <!-- Role Play 3 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — Payment Method Decision</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -711,10 +845,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> There are almost always alternatives to a declined card. For UK payers, bank transfers are typically available. Never leave a payer without exploring options.</div>
           </div>
         </div>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Online vs Offline</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -729,6 +867,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. "Online" refers to methods completed entirely within the Flywire portal. Review the intro articles above to understand the online vs offline distinction.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -746,8 +885,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎓</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">SFS — Student Financial Software</div>
           <div class="activity-desc">Understand what SFS is, how payers interact with payment plans, and how to handle SFS-related support requests.</div>
           <div class="activity-links">
@@ -760,10 +902,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d8-sfs" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-video">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎬</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Video</span></div>
           <div class="activity-title">Sandbox Practice — SFS Payment Plan Enrollment</div>
           <div class="activity-desc">Walk through the complete SFS enrollment flow in your sandbox. Record your screen or voice, then upload below as proof of practice.</div>
           <div class="upload-box">
@@ -780,10 +926,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d8-sandbox" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — SFS</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -798,6 +948,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. Without SFS training, you should follow the specific guidelines for non-trained agents. Review "Non-Trained SFS Agents Guidelines" above.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -815,8 +966,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🏫</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Common Application — CAP Module</div>
           <div class="activity-desc">Understand what CAP is, how payers arrive at Flywire through the Common App portal, payment methods available, and how Cashnet fits in.</div>
           <div class="activity-links">
@@ -828,11 +982,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d9-cap" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <!-- Role Play 4 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — CAP Payer Confusion</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -847,10 +1005,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> This payer needs reassurance and a clear explanation. Review "How a CAP User Ends Up at Flywire" to understand the relationship and how to explain it confidently.</div>
           </div>
         </div>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — CAP</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -865,6 +1027,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. Review "How a CAP User Ends Up at Flywire" — the key is that the specific school uses Flywire as its payment processor.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -882,21 +1045,29 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-shadowing">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👁️</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Shadowing</span></div>
           <div class="activity-title">Live Shadowing — Payment Queries</div>
           <div class="activity-desc">Shadow an experienced agent handling live payment method queries. Note how they navigate the Dashboard, identify payment methods, and handle uncertainty.</div>
           <button class="complete-btn" data-id="d10-shadow" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">90 min</span>
+        </div>
       </div>
       <div class="activity type-session">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👥</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Live Session</span></div>
           <div class="activity-title">Week 2 Review &amp; Q&amp;A</div>
           <div class="activity-desc">Trainer-led review covering payment methods, SFS, and CAP. Discuss any tricky scenarios from the week.</div>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
     </div>
   </div>
@@ -926,8 +1097,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🏦</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Banking Core Knowledge</div>
           <div class="activity-desc">Build the banking vocabulary and concepts you need to support payers effectively. From basic terminology to FX rates and intermediary banks.</div>
           <div class="activity-links">
@@ -939,10 +1113,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d11-banking" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Banking Basics</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -957,6 +1135,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. Intermediary banks can deduct fees from the transfer in transit. Review the "Intermediary Bank" article to understand this common issue.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -974,8 +1153,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">↩️</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Refunds — Core Concepts</div>
           <div class="activity-desc">Understand what a refund is, how the refund process works end-to-end, typical refund timing, and how fees and FX rates apply.</div>
           <div class="activity-links">
@@ -988,11 +1170,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d12-refund-intro" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <!-- Role Play 5 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — Refund Timeline Expectation</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -1007,10 +1193,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> Even if you can't speed up the refund, always check the current status first and acknowledge the frustration. Review refund timing and process articles above.</div>
           </div>
         </div>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Refunds</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -1025,6 +1215,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. There's a specific Refund FX Rate — review "Refund Fee &amp; Refund FX Rate" above to understand how the refund amount is calculated.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1042,8 +1233,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🔍</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Refunds Tool &amp; KYC Verification</div>
           <div class="activity-desc">Learn to navigate the Refunds Tool, understand KYC (Know Your Customer) requirements for refunds, and handle common KYC scenarios.</div>
           <div class="activity-links">
@@ -1057,10 +1251,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d13-refunds-tool" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">75 min</span>
+        </div>
       </div>
       <div class="activity type-video">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎬</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Video</span></div>
           <div class="activity-title">Sandbox Practice — Refunds Tool &amp; KYC</div>
           <div class="activity-desc">Navigate the Refunds Tool in your sandbox, review refund payment tabs, and walk through a KYC checklist. Record your screen or voice, then upload below.</div>
           <div class="upload-box">
@@ -1077,10 +1275,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d13-sandbox" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — KYC</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -1095,6 +1297,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. KYC is about regulatory compliance — specifically anti-money laundering rules. Review "Intro to Refund KYC" above for the full explanation.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1112,8 +1315,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🇨🇳</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">China — Payment Methods &amp; Nuances</div>
           <div class="activity-desc">China-specific knowledge: available payment methods, Alipay, domestic RMB transfers, and the rewards program for China payers.</div>
           <div class="activity-links">
@@ -1125,10 +1331,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d14-china" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">45 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — China Payments</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -1143,6 +1353,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. Alipay from China processes in CNY (Chinese Yuan). Review the "Alipay in CNY" article above.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1160,18 +1371,25 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-shadowing">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👁️</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Shadowing</span></div>
           <div class="activity-title">Live Shadowing — Refund &amp; Banking Queries</div>
           <div class="activity-desc">Shadow an experienced agent handling refund cases including KYC verification. Pay attention to how they communicate timelines and manage payer expectations.</div>
           <button class="complete-btn" data-id="d15-shadow" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">90 min</span>
+        </div>
       </div>
       <!-- Role Play 6 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — KYC Document Request</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -1186,14 +1404,19 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> This scenario requires KYC verification — not a flat-out refusal or automatic approval. Review KYC scenarios to understand when third-party refunds are possible and what's required.</div>
           </div>
         </div>
+        </div>
       </div>
       <div class="activity type-session">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👥</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Live Session</span></div>
           <div class="activity-title">Week 3 Review &amp; Q&amp;A</div>
           <div class="activity-desc">Banking and refunds debrief with your trainer. Revisit any complex topics and clarify open questions before moving into Week 4.</div>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1223,8 +1446,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">✅</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">MaestroQA — QA Framework</div>
           <div class="activity-desc">Learn how CPE's quality assurance works: how tickets are graded, what QA coaching looks like, how to appeal grades, and how to use dashboards.</div>
           <div class="activity-links">
@@ -1237,10 +1463,14 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d16-qa" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — QA Process</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -1255,6 +1485,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. MaestroQA has a formal appeals process. Review "Appeals Escalation Workflow" to understand how to properly contest a grade.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1272,8 +1503,11 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-guide">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🌍</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Reading</span></div>
           <div class="activity-title">Country &amp; Region-Specific Knowledge</div>
           <div class="activity-desc">Learn the key nuances for the most common payer regions: India, Brazil, Nigeria, and key LATAM/APAC markets. Understand what makes each region unique.</div>
           <div class="activity-links">
@@ -1286,11 +1520,15 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
           <button class="complete-btn" data-id="d17-regions" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">60 min</span>
+        </div>
       </div>
       <!-- Role Play 7 -->
       <div class="activity type-roleplay">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎭</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Role Play</span></div>
           <div class="activity-title">Role Play — India Payer Query</div>
           <div class="rp-box">
             <div class="rp-title">🎭 Scenario Practice</div>
@@ -1304,6 +1542,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="rp-feedback best"><span class="rp-feedback-icon">✅</span> Great! You correctly identify that India has specific remittance regulations, mention the LRS framework, and commit to finding accurate information rather than guessing. This shows expertise and thoroughness.</div>
             <div class="rp-feedback wrong"><span class="rp-feedback-icon">❌</span> India has specific outward remittance regulations (including LRS requirements). Review the India-specific payment articles to understand common restrictions and how to handle them.</div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1321,17 +1560,24 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-practice">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🛠️</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Practice</span></div>
           <div class="activity-title">Supported Ticket Handling</div>
           <div class="activity-desc">Handle real payer tickets independently with your trainer available for questions. Start with lower-complexity tickets and escalate up as you gain confidence.</div>
           <button class="complete-btn" data-id="d18-practice" onclick="toggleComplete(this)">✓ Mark complete</button>
         </div>
         <span class="activity-time">120 min</span>
+        </div>
       </div>
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🎯</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Knowledge Check — Escalation Judgment</div>
           <div class="kc-box">
             <div class="kc-header"><div class="kc-title">🧠 Knowledge Check</div><span class="kc-badge">Multiple Choice</span></div>
@@ -1346,6 +1592,7 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             <div class="kc-feedback incorrect"><span class="kc-feedback-icon">❌</span>Not quite. Think about which scenarios carry financial risk or require management-level authority. Chargeback threats are always escalation-worthy.</div>
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1363,17 +1610,24 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
     </div>
     <div class="day-body hidden">
       <div class="activity type-session">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">👥</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Live Session</span></div>
           <div class="activity-title">Final Trainer Review</div>
           <div class="activity-desc">Comprehensive debrief covering all 4 weeks. Address remaining knowledge gaps, discuss escalation paths, and confirm readiness for independent handling.</div>
         </div>
         <span class="activity-time">90 min</span>
+        </div>
       </div>
       <!-- Final comprehensive KC -->
       <div class="activity type-check">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🏆</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Knowledge Check</span></div>
           <div class="activity-title">Final Knowledge Check — Full Program Review</div>
           <div class="kc-box" id="final-kc">
             <div class="kc-header"><div class="kc-title">🏆 Final Assessment</div><span class="kc-badge">Comprehensive</span></div>
@@ -1389,13 +1643,18 @@ header{background:var(--primary-dark);color:white;padding:0 32px;display:flex;al
             </span><button class="kc-reset" onclick="resetKC(this)">↺ Try again</button>
           </div>
         </div>
+        </div>
       </div>
       <div class="activity type-practice">
+        <div class="activity-stripe"></div>
+        <div class="activity-inner">
         <div class="activity-icon">🚀</div>
         <div class="activity-content">
+          <div class="activity-header"><span class="activity-type-label">Practice</span></div>
           <div class="activity-title">Go-Live — Independent Handling Begins</div>
           <div class="activity-desc">Congratulations! You have now passed your onboarding and are handling tickets independently. Your trainer is available for support, and we encourage you to leverage our AI knowledge assistant and internal guide. Be curious, ask questions, and remember that it can take a few more weeks to be truly comfortable. We are here to support you. Welcome to the CPE team! 🎉</div>
           <button class="complete-btn" data-id="d19-golive" onclick="toggleComplete(this)">✓ Mark complete</button>
+        </div>
         </div>
       </div>
     </div>
